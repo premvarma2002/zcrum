@@ -1,14 +1,14 @@
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs"
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 const header = () => {
   return (
-    <div>
+    <div className="p-4 bg-gray-900 text-white flex justify-end">
       <SignedOut>
-        <SignInButton/>
+        <SignInButton />
       </SignedOut>
 
       <SignedIn>
-        <UserButton/>
+        <UserButton />
       </SignedIn>
     </div>
   )
