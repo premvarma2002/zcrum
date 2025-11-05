@@ -1,9 +1,22 @@
 import { Button } from "@/components/ui/button";
-import { Activity, ChevronRight, Layout, Users } from "lucide-react";
+import {
+  Activity,
+  ArrowRight,
+  ChevronRight,
+  Layout,
+  Users,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import CompanyCarousel from "@/components/company-carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import faqs from "@/data/faqs";
 
 const features = [
   {
@@ -58,7 +71,7 @@ export default function Home() {
           </Button>
         </Link>
       </section>
-       {/* Features Section */}
+      {/* Features Section */}
       <section id="features" className="bg-gray-900 py-20 px-5">
         <div className="container mx-auto">
           <h3 className="text-3xl font-bold mb-12 text-center">Key Features</h3>
@@ -77,10 +90,43 @@ export default function Home() {
           </div>
         </div>
       </section>
-       <section className="py-20">
+      <section className="py-20">
         <div className="container mx-auto">
-          <h3 className="text-3xl font-bold mb-12 text-center">Trusted by Industry Leaders</h3>
+          <h3 className="text-3xl font-bold mb-12 text-center">
+            Trusted by Industry Leaders
+          </h3>
           <CompanyCarousel />
+        </div>
+      </section>
+      <section className="bg-gray-900 py-20 px-5">
+        <div className="container mx-auto">
+          <h3 className="text-3xl font-bold mb-12 text-center">
+            Frequently Asked Questions
+          </h3>
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger>{faq.question}</AccordionTrigger>
+                <AccordionContent>{faq.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+        <section className="py-20 text-center px-5">
+        <div className="container mx-auto">
+          <h3 className="text-3xl font-bold mb-6">
+            Ready to Transform Your Workflow?
+          </h3>
+          <p className="text-xl mb-12">
+            Join thousands of teams already using ZCRUM to streamline their
+            projects and boost productivity.
+          </p>
+          <Link href="/onboarding">
+            <Button size="lg" className="animate-bounce">
+              Start For Free <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
