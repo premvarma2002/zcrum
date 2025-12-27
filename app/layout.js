@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
+import "dotenv/config";
 import { Inter } from "next/font/google";
 import Header from "@/components/header";
 import { ClerkProvider } from "@clerk/nextjs";

@@ -37,7 +37,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "app/(main)/onboarding/[[onboarding]]/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]
