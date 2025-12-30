@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
         }
       }}
     >
-      <html lang="en" suppressHydrationWarning>
+      <html lang="en" suppressHydrationWarning className="dark">
         <body className={`${inter.className} dotted-background`}>
           <ThemeProvider attribute="class" defaultTheme="dark">
             <Header />
